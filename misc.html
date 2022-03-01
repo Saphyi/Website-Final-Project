@@ -4,7 +4,7 @@
 <head>
 
     <title>
-        Misc
+        How To RickRoll
     </title>
     <style>
 
@@ -31,6 +31,30 @@
         .nav__links li a:hover {
             color: #0088a9;
         }
+        body {
+            animation: 100s ease-in-out infinite color-change;
+        }
+
+        @keyframes color-change {
+            0% {
+                background-color: teal;
+            }
+            20% {
+                background-color: gold;
+            }
+            40% {
+                background-color: indianred;
+            }
+            60% {
+                background-color: violet;
+            }
+            80% {
+                background-color: green;
+            }
+            100% {
+                background-color: teal;
+            }
+        }
     </style>
 </head>
 
@@ -44,23 +68,48 @@
   <li><a href="index.html">Home</a></li>
   <li><a href="audio.html">Audio</a></li>
   <li><a href="video.html">Video</a></li>
-  <li><a href="#">Misc</a></li>
+  <li><a href="#">Steps</a></li>
 </ul>
-<br><br><br><br><br><br>
+</nav>
+<br><br>
+  </div>
 
-<iframe id="frame" src="https://bing.com" width="700"></iframe>
-<br>
-<button onclick="myFunction()">Size</button>
+<p>First short text<span id="dots">...</span><span id="more"> Longer text</span></p>
+    <button onclick="myFunction()" id="myBtn">Read more</button>
+
+
 <script>
     function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+    function pageLoad() {
+        document.getElementById("frame").style.display = "none";
+    }
+
+    function buttonPress() {
+        document.getElementById("frame").style.display = "block";
         document.getElementById("frame").height = "800";
         document.getElementById("frame").width = "800";
     }
 </script>
-<div>
-    <div class="footer">
-        <div>You got rickrolled.</div>
-    </div>
-</div>
+
+<ol>
+  <li>Step 1</li>
+  <li>Step 2</li>
+  <li>Step 3</li>
+</ol> 
+
 </body>
 </html>
